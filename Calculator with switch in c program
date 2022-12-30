@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+    int a,b,c,choice,dummy;
+    char d;
+    //calculator 
+    do{
+    printf("PRESS 1 FOR ADDITION\nPRESS 2 FOR SUBTRACTION\nPRESS 3 FOR MULTIPLY\nPRESS 4 FOR DIVISION\n");
+    printf("Enter any Two number\n");
+    scanf("%d %d",&a,&b);
+    printf("ENTER THE CHOICE YOU WANT TO PERFORM\n");
+    scanf("%d",&choice);
+
+    switch(choice)
+    {
+        case 1:printf("Addition of two number=%d\n",c=a+b);
+        break;
+
+        case 2:printf("Subtraction of two number=%d\n",c=a-b);
+        break;
+
+        case 3:printf("Multiplication of two number=%d\n",c=a*b);
+        break;
+
+        case 4:printf("Division of two number=%d\n",c=a/b);
+        break;
+
+        default:printf("it is not valid option (try again)");
+    }printf("Do you want to continue ?\n");
+    scanf("%d",&dummy);
+    scanf("%c",&c);
+    }while(c=='y');
+
+    return 0;
+}
