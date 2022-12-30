@@ -1,0 +1,152 @@
+/*Program is Made by PRINCE RAJ*/
+/* THIS PROGRAM CONSIST OF SIX PROGRAM 
+1.CHECK THE NUMBER IS PRIME OR NOT
+2.TO PRINT A FIBONACCI SERIES
+3.TO PRINT A HALF TRIANGLE OF STAR
+4.CHECK THE NUMBER IE EVEN OR ODD
+5.PRINT THE PRIME NUMBER BETWEEN TWO NUMBERS
+6.FINDING A FACTORIAL
+*/
+
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+int main()
+{
+    int m,choice,dummy;
+
+    //DECLARATION FOR PRIME NUMBER
+    int i,num;
+    //DECLARATION FOR FIBONACCI SERIES
+    int a,b,c,n;
+    a=1;
+    b=1;
+    //DECLARATION FOR STAR PROGRAM 
+    int j;
+    //initialization for factorial
+     int fact=1;
+     int factorial;
+    //initialization for quadratic
+    char d;
+    //lab file with switch and adding lots of program in one file 
+    do{ 
+        printf("THIS PROGRAM IS MADE BY PRINCE RAJ\n\n\n");
+        //printf everything
+        printf("PRESS 1 FOR CHECK THE NUMBER IS PRIME OR NOT\n");
+        printf("PRESS 2 FOR FIBONACCI SERIES\n");
+        printf("PRESS 3 FOR MAKE A STAR PROGRAM\n");
+        printf("PRESS 4 FOR CHECK NUMBER IS EVEN OR ODD\n");
+        printf("PRESS 5 FOR PRINTING 1 TO 100 PRIME NUMBER AND ENTER TWO NUMBERS FIRST AND SECOND\n");
+        printf("PRESS 6 FOR FINDING FACTORIAL\n");
+        printf("PRESS 7  FOR EXIT\n\n\n");
+        printf("ENTER THE CHOICE YOU WANT TO PERFORM\n");
+        scanf("%d",&choice);
+
+    switch(choice)
+    {
+        /*checking a number is prime or not and there is exit function 
+        if the no will be not prime it will automatically exit the whole program*/
+        case 1:
+            printf("Enter a number:");
+            scanf("%d",&num);
+             for(i=2;i<num;i++)
+             {
+             if(num%i==0)
+              {
+                printf("%d number is not a prime number\n",num);
+                 exit(0);
+              }
+             }
+            printf("%d is prime number\n",num);
+
+        break;
+        //print a fibonacci series
+        case 2:
+             printf("Enter a number:");
+             scanf("%d",&n);
+             printf("%d",a);
+             printf("%d",b);
+
+             for(i=1;i<=n;i++)
+             {
+                c=a+b;
+                a=b;
+                b=c;
+                printf("%d",c);
+            
+             }
+        break;
+        //For a half triangle star
+        case 3:
+        
+            printf("Enter a number of rows you want to perform:\n");
+            scanf("%d",&n);
+
+            for(i=1;i<=n;i++)
+             {
+            for(j=1;j<=i;j++)
+            {
+                printf("*");
+            }
+            printf("\n");
+              }
+        break;
+        //Check a number is even or odd
+        case 4: 
+             printf("Enter a number:");
+             scanf("%d",&n);
+                 if(n%2==0)
+                   {
+                     printf("%d is even number\n",n);
+                   }
+                 else
+                   {
+                    printf("%d Number is odd\n",n);
+                   }
+        break;
+        
+        case 5://print 1 to 100 prime numbers
+            printf("Enter the first number:");
+            scanf("%d",&a);
+            printf("Enter the second number:");
+            scanf("%d",&b);
+
+            for(i=a+1;i<=b-1;i++)
+            {
+                for(j=2;j<i;j++)
+                {
+                    if(i%j==0)
+                    {
+                        break;
+                    }
+                }
+            if(i==j)
+            {
+                printf(" %d",j);
+            }
+            }
+        break;
+        // find factorial of the number
+        case 6:
+            printf("Enter a Number:");
+            scanf("%d",&factorial);
+            for(i=1;i<=factorial;i++)
+            {
+                fact=fact*i;
+            }
+            printf("Factorial of %d is %d\n",factorial,fact);
+        break;
+        //exit function
+        case 7:
+        printf("you are out of the whole program\n");
+        exit(0); 
+
+        default:printf("It is not an valid option (try again)");
+    }
+       printf("Do you want to continue ?(PRESS y FOR  YES)\n");
+       scanf("%d",&dummy);
+       scanf("%c",&d);
+       }
+       while(d=='y');
+       return 0;
+}
